@@ -1,24 +1,42 @@
+// importing the icons
+import { BiAngry, BiBody, BiBluetooth, BiArrowFromRight } from "react-icons/bi";
 import Button from "./Button";
 
 function App() {
     return <div>
         <div>
-            <Button>click here!</Button>
+            <Button>
+            <BiAngry />
+                click here!
+                </Button>
         </div>
         <div>
-            <Button  secondary> click me</Button>
+            <Button  secondary> 
+            <BiBody />
+            click me
+            </Button>
         </div>
         <div>
-            <Button warning outline rounded>Buy Now</Button>
+            <Button warning outline rounded>
+                Buy Now
+                </Button>
         </div>
         <div>
-            <Button primary outline>See Deal!</Button>
+            <Button primary outline>
+            <BiBluetooth />
+                See Deal!
+                </Button>
         </div>
         <div>
-            <Button>Hide Ads!</Button>
+            <Button>
+            <BiArrowFromRight />
+                Hide Ads!
+                </Button>
         </div>
         <div>
-            <Button primary >Something!</Button>
+            <Button primary >
+                Something!
+                </Button>
         </div>
     </div>
 }
