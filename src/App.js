@@ -6,19 +6,19 @@ function App() {
             <Button>click here!</Button>
         </div>
         <div>
-            <Button primary secondary> click me</Button>
+            <Button  secondary> click me</Button>
         </div>
         <div>
-            <Button>Buy Now</Button>
+            <Button warning outline rounded>Buy Now</Button>
         </div>
         <div>
-            <Button>See Deal!</Button>
+            <Button primary outline>See Deal!</Button>
         </div>
         <div>
             <Button>Hide Ads!</Button>
         </div>
         <div>
-            <Button>Something!</Button>
+            <Button primary >Something!</Button>
         </div>
     </div>
 }
