@@ -3,40 +3,45 @@ import { BiAngry, BiBody, BiBluetooth, BiArrowFromRight } from "react-icons/bi";
 import Button from "./Button";
 
 function App() {
+
+    const handleClick = () => {
+        console.log("click!!");
+    }
+
     return <div>
         <div>
-            <Button>
-            <BiAngry />
+            <Button className="mb-5" onClick={handleClick}>
+                <BiAngry />
                 click here!
-                </Button>
+            </Button>
         </div>
         <div>
-            <Button  secondary> 
-            <BiBody />
-            click me
+            <Button outline>
+                <BiBody />
+                click me
             </Button>
         </div>
         <div>
             <Button warning outline rounded>
                 Buy Now
-                </Button>
+            </Button>
         </div>
         <div>
-            <Button primary outline>
-            <BiBluetooth />
+            <Button success>
+                <BiBluetooth />
                 See Deal!
-                </Button>
+            </Button>
         </div>
         <div>
-            <Button>
-            <BiArrowFromRight />
+            <Button secondary>
+                <BiArrowFromRight />
                 Hide Ads!
-                </Button>
+            </Button>
         </div>
         <div>
             <Button primary >
                 Something!
-                </Button>
+            </Button>
         </div>
     </div>
 }
