@@ -18,6 +18,11 @@ function App() {
             id: '3',
             label: 'Can I use CSS on a project',
             content: 'sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.'
+        },
+        {
+            id: '4',
+            label: 'Can I use CSS on a project',
+            content: 'sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.'
         }
     ];
 
