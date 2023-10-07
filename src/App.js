@@ -1,49 +1,31 @@
-// importing the icons
-import { BiAngry, BiBody, BiBluetooth, BiArrowFromRight } from "react-icons/bi";
-import Button from "./Button";
+import Accordion from './components/Accordion';
+
+
 
 function App() {
+    const items = [
+        {
+            id: '1',
+            label: 'Can I use React on a project',
+            content: 'sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.'
+        }, 
+        {
+            id: '2',
+            label: 'Can I use Javascript on a project',
+            content: 'sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.'
+        }, 
+        {
+            id: '3',
+            label: 'Can I use CSS on a project',
+            content: 'sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.sure, you can use the react on your project.'
+        }
+    ];
 
-    const handleClick = () => {
-        console.log("click!!");
-    }
-
-    return <div>
-        <div>
-            <Button className="mb-5" onClick={handleClick}>
-                <BiAngry />
-                click here!
-            </Button>
-        </div>
-        <div>
-            <Button outline>
-                <BiBody />
-                click me
-            </Button>
-        </div>
-        <div>
-            <Button warning outline rounded>
-                Buy Now
-            </Button>
-        </div>
-        <div>
-            <Button success>
-                <BiBluetooth />
-                See Deal!
-            </Button>
-        </div>
-        <div>
-            <Button secondary>
-                <BiArrowFromRight />
-                Hide Ads!
-            </Button>
-        </div>
-        <div>
-            <Button primary >
-                Something!
-            </Button>
-        </div>
+    return (
+    <div>    
+        <Accordion items={items}/>
     </div>
+  )
 }
 
 export default App;
