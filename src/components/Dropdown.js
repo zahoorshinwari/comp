@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Dropdown({ options , selection, onSelect }) {
+function Dropdown({ options , value, onChange }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
@@ -18,7 +18,7 @@ function Dropdown({ options , selection, onSelect }) {
         setIsOpen(false);
 
         // what option did the user click on.
-        onSelect(option);
+        onChange(option);
     }
  
     const renderedOptions = options.map((option) => {
@@ -31,12 +31,12 @@ function Dropdown({ options , selection, onSelect }) {
             <div onClick={handleClick}>
             
                 {/* the below statment mean that if the selection is null then show the 2nd option. while if the selection is not null then show the selection?.label that are selected */}
-                {selection?.label || 'Select....'}</div>
+                {value?.label || 'Select....'}</div>
             
             {/* if is open is is true then show the rendered option if false the can't show */}
             {isOpen && <div>{renderedOptions}</div>}
         </div>
     )
 }
-
+ 
 export default Dropdown;
