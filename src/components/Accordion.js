@@ -4,7 +4,7 @@ import { GoChevronDown, GoChevronLeft } from "react-icons/go";
 function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
-
+ 
   // to use the function for the event handler (click,enter)
   // and the event are used inside the maping function
   // then their function will be defined inside the maping function 
