@@ -11,7 +11,6 @@ function Accordion({ items }) {
   // but here we want to write the function for event outside the 
   // maping function 
   const handleClick = (nextIndex) => {
-    console.log('STALE version of expandedIndex' , expandedIndex);
     
     setExpandedIndex((currentExpandedIndex) => {
       console.log("UP TO DATE version " , currentExpandedIndex);
@@ -26,22 +25,25 @@ function Accordion({ items }) {
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex;
 
-    const icon = <span className='text-3xl'>
-      {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
+    const icon = ( 
+      <span className='text-3xl'>
+        {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
     </span>
-    return (
+    );
 
+    return (
       <div key={item.id}>
         <div className='flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer'
-          onClick={() => handleClick(index)}>
+          onClick={() => handleClick(index)}
+          >
           {item.label}
           {icon}
         </div>
         {isExpanded && <div className='border-b p-5'>{item.content}</div>}
       </div>
-    )
-
+    );
   });
+
   return (
     <div className='border-x border-t rounded'>{renderedItems}</div>
   )
