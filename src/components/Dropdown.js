@@ -15,19 +15,13 @@ function Dropdown({ options, value, onChange }) {
     // the true is the logic of capture(body,div,click) , target(click) and bubble(div,body)
     // when component is first rendered then the useEffect function will called because our second argument is empty array
     useEffect(() => {
-
-        // when the below reference is not assigned to any of the div
-        if(!divEl.current) {
-            return;
-        };
-
         const handler = (event) => {
-            // divEl.current is direct reference to the div element
-            // 
-            if(!divEl.current.contains(event.target)){
+            if (!divEl.current.contains(event.target)) {
                 setIsOpen(false);
-            } 
-        };
+            }
+        }
+
+     
         
     
     document.addEventListener('click', handler, true);
@@ -59,7 +53,9 @@ function Dropdown({ options, value, onChange }) {
     }
 
     const renderedOptions = options.map((option) => {
-        return <div className='hover:bg-sky-100 rounded cursor-pointer p-1' onClick={() => handleOptionClick(option)} key={option.value}>{option.label}</div>
+        return (
+        <div className='hover:bg-sky-100 rounded cursor-pointer p-1' onClick={() => handleOptionClick(option)} key={option.value}>{option.label}</div>
+        )
     });
 
 

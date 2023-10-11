@@ -8,7 +8,7 @@ function Route( {path, children}) {
         return children;
     }
 
-  return null;
+    return null;
 }
 
 export default Route;

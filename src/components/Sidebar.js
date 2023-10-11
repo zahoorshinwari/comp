@@ -2,9 +2,10 @@ import Link from './Link';
 
 function Sidebar() {
     const links = [
-        { label: 'Dropdown', path:'/'},
-        { label: 'Accordion', path:'/accordion'},
+        //{ label: 'Dropdown', path:'/'},
+        { label: 'Accordion', path:'/'},
         { label: 'Buttons', path:'/buttons'},
+        { label: 'Modal' , path:'/modal'},
     ];
 
 

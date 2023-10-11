@@ -1,9 +1,9 @@
 import Sidebar from "./components/Sidebar";
 import Route from "./components/Route";
 import AccordionPage from "./pages/AccordionPage";
-import DropdownPage from "./pages/DropdownPage";
+// import DropdownPage from "./pages/DropdownPage";
 import ButtonPage from './pages/ButtonPage';
-
+import ModalPage from "./pages/ModalPage";
 
 function App () {
   return (
@@ -12,11 +12,11 @@ function App () {
         <div className="col-span-5">
         
 
-        <Route path={"/"}>
+        {/* <Route path={"/"}>
           <DropdownPage />
-        </Route>
+        </Route> */}
 
-        <Route path={"/accordion"}>
+        <Route path={"/"}>
           <AccordionPage />
         </Route>
         
@@ -24,7 +24,9 @@ function App () {
           <ButtonPage />
         </Route>
 
-        
+        <Route path={"/modal"}>
+          <ModalPage />
+        </Route>
       </div>
     </div>
 
