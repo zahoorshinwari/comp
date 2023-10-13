@@ -1,6 +1,8 @@
 
 
-function Table( { data, config } ) {
+function Table( { data, config , keyFun} ) {
+
+    
 
     // this method is used for each header or the single single coloumn
     const renderedHeaders = config.map((column) => {
@@ -10,18 +12,22 @@ function Table( { data, config } ) {
     })
 
     // the below method used for the table rows
-    const renderedRow = data.map((fruit) => {
+    const renderedRow = data.map((rowData) => {
+
+        // this method is used for showing the each cell
+    const renderedCells = config.map((column) => {
+        return <td className="p-2" key={column.label}>{column.render(rowData)}</td>
+    })
+
+
+
         return (
-            <tr className="border-b" key={fruit.name}>
-                <td className="p-3">{fruit.name}</td>
-                <td className="p-3">
-                    <div className={`p-3 m-2 ${fruit.color}`}></div>
-                </td>
-                <td className="p-3">{fruit.score}</td>
+            <tr className="border-b" key={keyFun(rowData)} >
+                {renderedCells}
             </tr>
         )
     })
-  return (
+  return ( 
     <table className="table-auto border-spacing-2">
         <thead>
             <tr className="border-b-2">{renderedHeaders}</tr>
