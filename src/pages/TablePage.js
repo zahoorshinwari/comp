@@ -12,7 +12,7 @@ function TablePage () {
     const config = [
         // first coloumn
         { 
-            label: 'Name',
+            label: 'Fruit',
             render : (fruit) => fruit.name
         },
         // 2nd coloumn
