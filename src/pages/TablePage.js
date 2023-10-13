@@ -23,12 +23,13 @@ function TablePage () {
         // 3rd coloumn
         { 
             label: 'Score',
-            render : (fruit) => fruit.score
+            render : (fruit) => fruit.score,
+            header: () => <th className="bg-red-500">Score</th>,
 
         },
         
     ]
-
+ 
 
     const keyFun = (fruit) => {
         return fruit.name;
