@@ -14,12 +14,13 @@ function Dropdown({ options, value, onChange }) {
 
     // the true is the logic of capture(body,div,click) , target(click) and bubble(div,body)
     // when component is first rendered then the useEffect function will called because our second argument is empty array
-    useEffect(() => {
-        const handler = (event) => {
-            if (!divEl.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        }
+    
+        useEffect(() => {
+                    const handler = (event) => {
+                        if (divEl.current && !divEl.current.contains(event.target)) {
+                            setIsOpen(false);
+                        }
+                    };
 
      
         
@@ -82,3 +83,7 @@ function Dropdown({ options, value, onChange }) {
 }
 
 export default Dropdown;
+
+
+
+
