@@ -1,6 +1,9 @@
 // for updating ths state we will mush call the dispatch function
 
 
+// the produce are the function of immer library which are going to pass the reducer funtion to it.
+// the produce function is used to make the directly changes into the state of components
+import {produce} from 'immer'
 import Button from '../components/Button'
 import Panel from '../components/Panel'
 import { useReducer } from 'react'
@@ -19,31 +22,20 @@ const reducer = (state, action) => {
     // any thing that return from this function will be new state
     switch (action.type) {
         case INCREMENT_COUNT:
-            return {
-                ...state,
-                count: state.count + 1
-            }
+            state.count = state.count + 1
+            return
         case DECREMENT_COUNT:
-            return {
-                ...state, 
-                count: state.count - 1
-            }
+            state.count = state.count - 1
+            return
         case SET_VALUE_TO_ADD:
-            return {
-                ...state,
-                valueToAdd: action.payload
-            }
+            state.valueToAdd = action.payload
+            return
         case ADD_VALUE_TO_COUNT:
-            return {
-                ...state,
-                // the below two properties can override the initial state
-                count: state.count + state.valueToAdd,
-                valueToAdd: 0
-            }
+            state.count = state.count + state.valueToAdd
+            state.valueToAdd = 0  
+            return
         default:
-            // when we want to show an error when there is dispatching anything else
-            // throw new Error('unexpected action type: ' + action.type)
-            return state
+            return
     }
 
     // use the above method or the below if else method
@@ -80,7 +72,7 @@ function CounterPage ( { initialCount }){
     // in the state the 2nd argument of useReducer are present in it
     // dispatch is used that how to update the state 
     // when dispatch is calling then it find the reducer function
-    const [ state, dispatch] = useReducer(reducer , {
+    const [ state, dispatch] = useReducer(produce(reducer) , {
         count: initialCount,
         valueToAdd: 0,
     })
