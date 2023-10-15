@@ -18,7 +18,6 @@ const ADD_VALUE_TO_COUNT = 'add_value_to_count'
 const reducer = (state, action) => {
     // any thing that return from this function will be new state
     switch (action.type) {
-        // if the below cases are true
         case INCREMENT_COUNT:
             return {
                 ...state,
@@ -37,6 +36,7 @@ const reducer = (state, action) => {
         case ADD_VALUE_TO_COUNT:
             return {
                 ...state,
+                // the below two properties can override the initial state
                 count: state.count + state.valueToAdd,
                 valueToAdd: 0
             }
@@ -46,6 +46,30 @@ const reducer = (state, action) => {
             return state
     }
 
+    // use the above method or the below if else method
+    // if(action.type === INCREMENT_COUNT) {
+    //     return {
+    //         ...state,
+    //         count: state.count + 1
+    //     }
+    // }
+
+    // if(action.type === DECREMENT_COUNT) {
+    //     return {
+    //         ...state, 
+    //         count: state.count - 1
+    //     }
+    // }
+
+    // if(action.type === SET_VALUE_TO_ADD) {
+    //     return {
+    //         ...state,
+    //         valueToAdd: action.payload
+    //     }
+    // }
+
+ 
+    // return state
 }
 
 function CounterPage ( { initialCount }){
@@ -97,7 +121,7 @@ function CounterPage ( { initialCount }){
         <Panel className='m-3'>
             <h1 className='text-lg'>Count is :{state.count}</h1>
             <div className='flex flex-row'>
-                <Button onClick={increment}>Increement</Button>
+                <Button onClick={increment}>Increment</Button>
                 <Button onClick={decrement}>Decrement</Button>
             </div>
 
