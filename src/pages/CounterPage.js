@@ -18,6 +18,7 @@ const ADD_VALUE_TO_COUNT = 'add_value_to_count'
 const reducer = (state, action) => {
     // any thing that return from this function will be new state
     switch (action.type) {
+        // if the below cases are true
         case INCREMENT_COUNT:
             return {
                 ...state,
@@ -45,30 +46,6 @@ const reducer = (state, action) => {
             return state
     }
 
-    // use the above method or the below if else method
-    // if(action.type === INCREMENT_COUNT) {
-    //     return {
-    //         ...state,
-    //         count: state.count + 1
-    //     }
-    // }
-
-    // if(action.type === DECREMENT_COUNT) {
-    //     return {
-    //         ...state, 
-    //         count: state.count - 1
-    //     }
-    // }
-
-    // if(action.type === SET_VALUE_TO_ADD) {
-    //     return {
-    //         ...state,
-    //         valueToAdd: action.payload
-    //     }
-    // }
-
-
-    // return state
 }
 
 function CounterPage ( { initialCount }){
