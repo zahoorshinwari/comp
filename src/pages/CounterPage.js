@@ -135,3 +135,8 @@ function CounterPage ( { initialCount }){
 }
 
 export default CounterPage
+
+
+
+
+// In React, useReducer is a hook that allows you to manage state in a more complex and predictable way compared to the useState hook. It is typically used when you have state logic that involves multiple sub-values or when the next state depends on the previous one. useReducer is inspired by the concept of reducers in Redux, a popular state management library for React applications.
