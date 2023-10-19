@@ -18,6 +18,7 @@ const ADD_VALUE_TO_COUNT = 'add_value_to_count'
 
 // the state can identify the current state which is object (count , valueToAdd)
 // the action is used that what value are passed from dispatch
+// action is anything that are passed from 
 const reducer = (state, action) => {
     // any thing that return from this function will be new state
     switch (action.type) {
